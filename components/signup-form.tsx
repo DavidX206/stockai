@@ -10,12 +10,12 @@ import { getMessageFromCode } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import { auth, createUserWithEmailAndPassword } from '@/utils/firebase'
 
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
 export default function SignupForm() {
   const router = useRouter()
   const [result, dispatch] = useFormState(signup, undefined);
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
   useEffect(() => {
     if (result) {
       if (result.type === 'error') {
@@ -75,7 +75,7 @@ export default function SignupForm() {
             </div>
           </div>
         </div>
-        <LoginButton />
+        <LoginButton  email={email} password={password}/>
       </div>
 
       <Link href="/login" className="flex flex-row gap-1 text-sm text-zinc-400">
@@ -86,7 +86,7 @@ export default function SignupForm() {
   )
 }
 
-function LoginButton() {
+function LoginButton({email, password} : {email: string, password: string}) {
   const { pending } = useFormStatus()
 
   return (
