@@ -10,11 +10,11 @@ import { getMessageFromCode } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import { auth, signInWithEmailAndPassword } from '@/utils/firebase'
 
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
 export default function LoginForm() {
   const router = useRouter()
   const [result, dispatch] = useFormState(authenticate, undefined)
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
  
   useEffect(() => {
     if (result) {
@@ -29,15 +29,7 @@ export default function LoginForm() {
 
   return (
     <form
-      action={async () => {
-        dispatch
-        try {
-          await signInWithEmailAndPassword(auth, email, password)
-          toast.success('Logged in successfully')
-        } catch (error) {
-          toast.error('error')
-        }
-      }}
+      action={dispatch}
       className="flex flex-col items-center gap-4 space-y-3"
     >
       <div className="w-full flex-1 rounded-lg border bg-white px-6 pb-4 pt-8 shadow-md  md:w-96 dark:bg-zinc-950">
@@ -103,6 +95,14 @@ function LoginButton() {
     <button
       className="my-4 flex h-10 w-full flex-row items-center justify-center rounded-md bg-zinc-900 p-2 text-sm font-semibold text-zinc-100 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
       aria-disabled={pending}
+      onClick={async () => {
+        try {
+          await signInWithEmailAndPassword(auth, email, password)
+          toast.success('Logged in successfully')
+        } catch (error) {
+          toast.error('error')
+        }
+      }}
     >
       {pending ? <IconSpinner /> : 'Log in'}
     </button>
