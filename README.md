@@ -1,71 +1,110 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="StockAI" src="https://chat.vercel.ai/opengraph-image.png">
-  <h1 align="center">Next.js AI Chatbot</h1>
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock AI Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock AI Bot</h1>
+        <p>Welcome to the Stock AI Bot! This application provides real-time stock data and insights using advanced AI technologies. Built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV, the bot offers users up-to-date information about various stocks, including price trends, market news, and predictions.</p>
 
-<p align="center">
-  An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV.
-</p>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#configuration">Configuration</a></li>
+            <li><a href="#contributing">Contributing</a></li>
+            <li><a href="#license">License</a></li>
+        </ul>
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a> ·
-  <a href="#authors"><strong>Authors</strong></a>
-</p>
-<br/>
+        <h2 id="features">Features</h2>
+        <ul>
+            <li>Real-time Stock Data: Access current stock prices and market data.</li>
+            <li>AI-Driven Insights: Leverage OpenAI for analyzing and predicting market trends.</li>
+            <li>User-Friendly Interface: Built with Next.js for a responsive and modern user experience.</li>
+            <li>Persistent Data Storage: Utilize Vercel KV for storing user interactions and preferences.</li>
+            <li>Scalable and Fast: Deployed on Vercel, ensuring optimal performance and scalability.</li>
+        </ul>
 
-## Features
+        <h2 id="installation">Installation</h2>
 
-- [Next.js](https://nextjs.org) App Router
-- React Server Components (RSCs), Suspense, and Server Actions
-- [Vercel AI SDK](https://sdk.vercel.ai/docs) for streaming chat UI
-- Support for OpenAI (default), Anthropic, Cohere, Hugging Face, or custom AI chat models and/or LangChain
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - [Radix UI](https://radix-ui.com) for headless component primitives
-  - Icons from [Phosphor Icons](https://phosphoricons.com)
-- Chat History, rate limiting, and session storage with [Vercel KV](https://vercel.com/storage/kv)
-- [NextAuth.js](https://github.com/nextauthjs/next-auth) for authentication
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Node.js v14 or later</li>
+            <li>npm or yarn</li>
+        </ul>
 
-## Model Providers
+        <h3>Steps</h3>
+        <ol>
+            <li><strong>Clone the repository:</strong>
+                <pre><code>git clone https://github.com/yourusername/stock-ai-bot.git
+cd stock-ai-bot</code></pre>
+            </li>
+            <li><strong>Install dependencies:</strong>
+                <pre><code>// Using npm:
+npm install
 
-This template ships with OpenAI `gpt-3.5-turbo` as the default. However, thanks to the [Vercel AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), [Hugging Face](https://huggingface.co), or using [LangChain](https://js.langchain.com) with just a few lines of code.
+// Or using yarn:
+yarn install</code></pre>
+            </li>
+            <li><strong>Environment Variables:</strong>
+                <p>Create a <code>.env</code> file in the root directory and configure the following variables:</p>
+                <pre><code>OPENAI_API_KEY=your_openai_api_key
+VERCEL_KV_URL=your_vercel_kv_url</code></pre>
+            </li>
+            <li><strong>Run the Development Server:</strong>
+                <pre><code>// Using npm:
+npm run dev
 
-## Deploy Your Own
+// Or using yarn:
+yarn dev</code></pre>
+                <p>Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> in your browser to see the application.</p>
+            </li>
+        </ol>
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
+        <h2 id="usage">Usage</h2>
+        <p>1. <strong>Search for Stocks:</strong> Use the search bar to find specific stocks.</p>
+        <p>2. <strong>View Stock Details:</strong> Click on a stock to view detailed information, including historical data and AI-generated insights.</p>
+        <p>3. <strong>Get Predictions:</strong> Use the bot interface to ask questions about future market trends or specific stocks.</p>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Next.js+Chat&demo-description=A+full-featured%2C+hackable+Next.js+AI+chatbot+built+by+Vercel+Labs&demo-url=https%3A%2F%2Fchat.vercel.ai%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4aVPvWuTmBvzM5cEdRdqeW%2F4234f9baf160f68ffb385a43c3527645%2FCleanShot_2023-06-16_at_17.09.21.png&project-name=Next.js+Chat&repository-name=nextjs-chat&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot&from=templates&skippable-integrations=1&env=OPENAI_API_KEY%2CAUTH_SECRET&envDescription=How+to+get+these+env+vars&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=[{"type":"kv"}])
+        <h2 id="configuration">Configuration</h2>
+        <p>The bot is configured to use OpenAI for natural language processing and Vercel KV for data storage. You can customize the bot's behavior and appearance by modifying the configuration files in the <code>config</code> directory.</p>
 
-## Creating a KV Database Instance
+        <h2 id="contributing">Contributing</h2>
+        <p>We welcome contributions to the Stock AI Bot! To contribute, please fork the repository, create a new branch, and submit a pull request. Be sure to follow our <a href="CONTRIBUTING.md">contribution guidelines</a>.</p>
 
-Follow the steps outlined in the [quick start guide](https://vercel.com/docs/storage/vercel-kv/quickstart#create-a-kv-database) provided by Vercel. This guide will assist you in creating and configuring your KV database instance on Vercel, enabling your application to interact with it.
-
-Remember to update your environment variables (`KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`) in the `.env` file with the appropriate credentials provided during the KV database setup.
-
-## Running locally
-
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
-
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Your app template should now be running on [localhost:3000](http://localhost:3000/).
-
-## Authors
-
-This library is created by [Vercel](https://vercel.com) and [Next.js](https://nextjs.org) team members, with contributions from:
-
-- Jared Palmer ([@jaredpalmer](https://twitter.com/jaredpalmer)) - [Vercel](https://vercel.com)
-- Shu Ding ([@shuding\_](https://twitter.com/shuding_)) - [Vercel](https://vercel.com)
-- shadcn ([@shadcn](https://twitter.com/shadcn)) - [Vercel](https://vercel.com)
+        <h2 id="license">License</h2>
+        <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+    </div>
+</body>
+</html>
