@@ -35,7 +35,7 @@
 <body>
     <div class="container">
         <h1>Stock AI Bot</h1>
-        <p>Welcome to the Stock AI Bot! This application provides real-time stock data and insights using advanced AI technologies. Built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV, the bot offers users up-to-date information about various stocks, including price trends, market news, and predictions.</p>
+        <p>Welcome to the Stock AI Bot! This application provides real-time stock data and insights using advanced AI technologies. Built with Next.js, the Vercel AI SDK, OpenAI, and Vercel KV, the bot offers users up-to-date information about various stocks, including price trends, market news, as well as predictions.</p>
 
         <h2>Table of Contents</h2>
         <ul>
